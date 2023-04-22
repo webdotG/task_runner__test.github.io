@@ -29,18 +29,19 @@ const [todo, setTodo] = useState([
 
     },
   ]);
-
+  
   return (
     <div className="App">
       <Header/>
-      <AddToDo/>
+      <AddToDo todo={todo} setTodo={setTodo}/>
       <ToDoList todo={todo} setTodo={setTodo} />
     </div>
-  );
+ );
 }
 
 
 //передаю компоненту todolist PROPS пропсы для того что бы можно было работать с этим компонентом
 //говорю что todo равно массиву обьектов todo и settodo равно фуекцик settodo
-     
+
+
 export default App;
