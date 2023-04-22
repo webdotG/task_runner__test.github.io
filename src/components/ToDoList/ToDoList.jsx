@@ -4,10 +4,12 @@ import React, {useState} from "react";
 function ToDoList ({todo, setTodo}) {
 
 //флаг для обозначения в каком состоянии мы сейчас находимся просмтора или редактирования задачи
-//false - просмотр задачи true - редактирование задачи
-//ксли здесь значение edit совпадает c id который получен после map то выводится div input условие прописано ниже
+  //false - просмотр задачи true - редактирование задачи
+  //ксли здесь значение edit совпадает c id который получен после map то выводится div input условие прописано ниже
 const[edit,setEdit] = useState(null)
 
+//для установки значения в input value нынешего значения закидываю в него нынешний title
+const[value,setValue] = useState('')
 
   //функция для удаления todo
     //создаю переменную в которую положу новый массив в котором не будет выбранного нами элемента
@@ -36,9 +38,11 @@ const[edit,setEdit] = useState(null)
       setTodo(newTodo);
    }
 //функция для редактирования задачи-todo менять значение setedit на true для режима редактирования
-//здесь я беру значение edit и заношу в выше в edit 
-function editTodo(id){
+  //здесь я беру значение edit и заношу в выше в edit
+  //также при нажатии на редактировать закидываю нынещнее значение title 
+function editTodo(id, title){
      setEdit(id)
+     setValue(title)
   }
   return (
     <div>
@@ -46,6 +50,7 @@ function editTodo(id){
       //при помощи MAP вывожу каждый обьект из массива todo в div
       //передаю уникальное значенеие key равное id обьекта 
       //добавляю проверку если edit то выводить input и button сохранить
+      //input value при редактировании добавляю текущее значение и добавляю нынешнее значение title
       //если не edit то показывать title
       //добавляю ещё одну проверку для режима редактирования
       //если состояние edit то будет показываться кнопка сохранить
@@ -60,7 +65,7 @@ function editTodo(id){
             edit === item.id 
               ?
               <div>
-                <input />
+                <input value={value} />
               </div>
               :
               <div>{item.title}</div>
@@ -74,7 +79,7 @@ function editTodo(id){
               :
               <div>
                 <button onClick={ () =>deleteTodo(item.id)}>Удалить задачу</button>
-                <button onClick={ () =>editTodo(item.id)}>Редактировать задачу</button>
+                <button onClick={ () =>editTodo(item.id, item.title)}>Редактировать задачу</button>
                 <button onClick={ () =>statusTodo(item.id)}>открыть/закрыть задачу</button>      
               </div>
           }  
