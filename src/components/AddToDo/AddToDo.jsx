@@ -1,5 +1,14 @@
 import React, {useState} from "react";
-import uuid from 'uuid';
+import { v1 as uuidv1 } from 'uuid';
+
+const createIdGenerator = () =>{
+  let lastGenerateId = 0;
+
+  return () => {
+    lastGenerateId += 1;
+    return lastGenerateId;
+  };
+};
 
 
 function AddToDo ({todo, setTodo}) {      
@@ -8,7 +17,6 @@ function AddToDo ({todo, setTodo}) {
 //при изменения значания value оно передайтся в setvalue оно сохраняется в value 
 //значение value вывожу в value input
 const[value, setValue] = useState('');
-  console.log(value);
 
 //функция для сохранения и добавления задачи
   function saveTodo() {
@@ -17,7 +25,7 @@ const[value, setValue] = useState('');
   //и временно поставлю пакет npm uuid для уникальных id  
     setTodo(               
       [...todo, {
-        id: uuid.v4(),
+        id: uuidv1(),//костыль работает проверить на корректность ----todo.length + 1
         title: value,
         status:true,
       }]

@@ -30,6 +30,9 @@ const [todo, setTodo] = useState([
     },
   ]);
   
+  //хуйня какая-то надр вспомнить как смотреть  console.log(todo[0].id);
+  
+  
   return (
     <div className="App">
       <Header/>
