@@ -30,6 +30,7 @@ const[value, setValue] = useState('');
         status:true,
       }]
     );
+    setValue(''); //после всех манипуляций обнуляю value input на пустую строку
   }
 
 //инпут для поля ввода задачи c value для значения-ввода задачи 
