@@ -13,22 +13,22 @@
   padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  border: 2px solid #ccc;
+  border: 2px solid  rgba(0,0,0,0.06);
   border-radius: 10px;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  box-shadow:0 0 15px 4px rgba(170,240,209,0.6);
   cursor: pointer;
   font-size: 16px;
   transition: transform 250ms ease;
-}
+} 
 
 .task__button{
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  border: 2px solid #ccc;
+  border: 2px solid rgba(0,0,0,0.06);
   border-radius: 10px;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  box-shadow:0 0 15px 4px rgba(170,240,209,0.6);
   cursor: pointer;
   background-color: transparent;
   font-size: 16px;
