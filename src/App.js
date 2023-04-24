@@ -6,10 +6,10 @@ import ToDoList from './components/ToDoList/ToDoList';
 
 
 function App() {
-    //useState хранит в себе всю информацию, аналог базы данных
-    //вся информация массива с обьектами доступна в переменной TODO
-    //SETTODO функция которая будет менять работать с TODO с массивом обьектов
-const [todo, setTodo] = useState([
+//useState хранит в себе всю информацию, аналог базы данных
+  //вся информация массива с обьектами доступна в переменной TODO
+  //SETTODO функция которая будет менять работать с TODO с массивом обьектов
+  const [todo, setTodo] = useState([
     {
       id: 1,
       title: 'first task',
@@ -28,9 +28,9 @@ const [todo, setTodo] = useState([
       status: false,
 
     },
-  ]);
+    ]);
   
-  // todo.forEach((i) => console.log(i.id))
+//todo.forEach((i) => console.log(i.id))
   
   return (
     <div className="App">

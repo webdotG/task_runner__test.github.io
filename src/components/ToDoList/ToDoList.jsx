@@ -1,17 +1,17 @@
 import React, {useState} from "react";
 
 //получаю todo и settodo переданные из app.js 
-function ToDoList ({todo, setTodo}) {
+  function ToDoList ({todo, setTodo}) {
 
 //флаг для обозначения в каком состоянии мы сейчас находимся просмтора или редактирования задачи
   //false - просмотр задачи true - редактирование задачи
   //ксли здесь значение edit совпадает c id который получен после map то выводится div input условие прописано ниже
-const[edit,setEdit] = useState(null)
+  const[edit,setEdit] = useState(null)
 
 //для установки значения в input value нынешего значения закидываю в него нынешний title
-const[value,setValue] = useState('')
+  const[value,setValue] = useState('')
 
-  //функция для удаления todo
+//функция для удаления todo
     //создаю переменную в которую положу новый массив в котором не будет выбранного нами элемента
     //передаю копию массива применяю мктод filter и говорю 
     //что перебераемый id не должен быть равен id полученый от кнопки удаления того обьекта который хочу удалить
@@ -22,7 +22,7 @@ const[value,setValue] = useState('')
       setTodo(newTodo);
   }
 
-  //функия для изменения статуса задачи-todo
+//функия для изменения статуса задачи-todo
     //мне надо найти id того элемента который я передал через кнопку закрытия-изменения статуса задачи
     //если условие верное и такой id есть то меняю значение status задачи на противоположное
     //если элемент был найден я выхожу из условия и возвращаю весь массив
@@ -31,16 +31,17 @@ const[value,setValue] = useState('')
       let newTodo = [...todo].filter(item => {
         if (item.id === id) {
           item.status = !item.status;
-          console.log('элемент найден задача закрыта/открыта');
+          console.log(`элемент найден задача закрыта/открыта ${item.id} ${item.status}`);
         }
         return item;
       })
       setTodo(newTodo);
    }
+
 //функция для редактирования задачи-todo менять значение setedit на true для режима редактирования
   //здесь я беру значение edit и заношу в выше в edit
   //также при нажатии на редактировать закидываю нынещнее значение title 
-function editTodo(id, title){
+  function editTodo(id, title){
      setEdit(id)
      setValue(title)
   }

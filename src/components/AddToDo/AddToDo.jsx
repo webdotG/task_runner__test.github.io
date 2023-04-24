@@ -1,22 +1,11 @@
 import React, {useState} from "react";
 import { v1 as uuidv1 } from 'uuid';
 
-const createIdGenerator = () =>{
-  let lastGenerateId = 0;
-
-  return () => {
-    lastGenerateId += 1;
-    return lastGenerateId;
-  };
-};
-
-
 function AddToDo ({todo, setTodo}) {      
 
-//использую хук usestate для хранения текста из value input
-//при изменения значания value оно передайтся в setvalue оно сохраняется в value 
-//значение value вывожу в value input
-const[value, setValue] = useState('');
+//использую хук usestate для хранения текста из value input//при изменения значания value оно передайтся в setvalue оно сохраняется в value 
+  //значение value вывожу в value input
+  const[value, setValue] = useState('');
 
 //функция для сохранения и добавления задачи
   function saveTodo() {
