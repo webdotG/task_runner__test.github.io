@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './App.css';
 import Header from './components/Header/Header';
 import AddToDo from './components/AddToDo/AddToDo';
 import ToDoList from './components/ToDoList/ToDoList';

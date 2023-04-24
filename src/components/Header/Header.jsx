@@ -1,8 +1,9 @@
 import React from "react";
+import style from './Header.module.css'
 
 function Header () {
   return (
-    <div>
+    <div className={style.root} >
       Task List
     </div>
   )
