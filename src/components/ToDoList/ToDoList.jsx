@@ -3,6 +3,7 @@ import style from './ToDoList.module.css'
 import { MdOutlineDelete } from "react-icons/md";
 import { BiEditAlt } from "react-icons/bi";
 import { GrStatusGood } from "react-icons/gr";
+import { FaRegSave } from "react-icons/fa";
 
 //получаю todo и settodo переданные из app.js 
   function ToDoList ({todo, setTodo}) {
@@ -101,7 +102,7 @@ import { GrStatusGood } from "react-icons/gr";
               edit === item.id 
                 ?
                 <div className={style['task-list__button-wrapper']}>
-                  <button onClick={() => saveTodo(item.id)} >сохранить</button>
+                  <button className={style['task-list__button--save']} onClick={() => saveTodo(item.id)} ><FaRegSave className={style['save-icon']}/></button>
                 </div>
                 :
                 <div className={style['task-list__button-wrapper']}>

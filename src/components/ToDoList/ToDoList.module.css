@@ -17,6 +17,7 @@
   justify-content: space-between;
 }
 
+.task-list__button--save,
 .task-list__button--delete,
 .task-list__button--edit,
 .task-list__button--status{
@@ -24,12 +25,16 @@
   height: 40px;
 }
 
+.task-list__button--save{
+  margin-right: 120px;
+}
 
 .task-list__button--edit,
 .task-list__button--status{
   margin-right: 20px;
 }
 
+.save-icon,
 .status-icon,
 .edit-icon,
 .delete-icon{
@@ -37,6 +42,8 @@
   scale: 2;
 }
 
+.save-icon:focus,
+.save-icon:hover,
 .status-icon:focus,
 .status-icon:hover,
 .edit-icon:focus,
