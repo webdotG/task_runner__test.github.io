@@ -33,6 +33,17 @@
 .status-icon,
 .edit-icon,
 .delete-icon{
-  scale:2;
+  padding: 5px;
+  scale: 2;
 }
 
+.status-icon:focus,
+.status-icon:hover,
+.edit-icon:focus,
+.edit-icon:hover,
+.delete-icon:focus,
+.delete-icon:hover{
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow:0 0 2px 2px rgba(0,0,0,0.06);
+}
