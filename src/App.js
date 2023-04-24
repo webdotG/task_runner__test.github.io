@@ -32,7 +32,7 @@ function App() {
 //todo.forEach((i) => console.log(i.id))
   
   return (
-    <div className="App">
+    <div className={style['App']}>
       <Header/>
       <AddToDo todo={todo} setTodo={setTodo}/>
       <ToDoList todo={todo} setTodo={setTodo} />
