@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import style from './ToDoList.module.css'
 import { MdOutlineDelete } from "react-icons/md";
 import { BiEditAlt } from "react-icons/bi";
-import { GrStatusGood } from "react-icons/gr";
 import { FaRegSave } from "react-icons/fa";
+import { IconNameHiOutlineLockOpen, HiOutlineLockClosed, HiOutlineLockOpen } from "react-icons/hi2";
 
 //получаю todo и settodo переданные из app.js 
   function ToDoList ({todo, setTodo}) {
@@ -107,8 +107,14 @@ import { FaRegSave } from "react-icons/fa";
                 :
                 <div className={style['task-list__button-wrapper']}>
                   <button className={style['task-list__button--edit']} onClick={ () =>editTodo(item.id, item.title)}><BiEditAlt className={style['edit-icon']} /></button>
-                  <button className={style['task-list__button--status']} onClick={ () =>statusTodo(item.id)}><GrStatusGood className={style['status-icon']} /></button> 
-                  <button className={style['task-list__button--delete']} onClick={ () =>deleteTodo(item.id)}><MdOutlineDelete className={style['delete-icon']}/></button>
+                  <button className={style['task-list__button--status']} onClick={ () =>statusTodo(item.id)}>
+                  {
+                    item.status 
+                    ? <HiOutlineLockOpen className={style['delete-icon']}/> 
+                    : <HiOutlineLockClosed className={style['delete-icon']}/> 
+                  }
+                  </button> 
+                  <button className={style['task-list__button--delete']} onClick={ () =>deleteTodo(item.id)}><MdOutlineDelete  className={style['delete-icon']}/></button>
                 </div>
             }
         </li>    
