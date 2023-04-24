@@ -1,0 +1,14 @@
+.header{
+  min-height: 80px;
+  min-width: 680px;
+  margin-right:50px;
+  margin-left:50px;
+  margin-top:25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  color: black;
+  background-color: #aaf0d1;
+  border-radius: 10px;
+}

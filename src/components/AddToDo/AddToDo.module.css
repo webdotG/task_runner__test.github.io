@@ -1,0 +1,53 @@
+.task{
+  min-width: 680px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.task__input{
+  min-width: 300px;
+  min-height:30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 250ms ease;
+}
+
+.task__button{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  transition: transform 250ms ease;
+}
+
+.task__input:focus,
+.task__input:hover,
+.task__input:active{
+  box-shadow:0 0 15px 4px  rgba(170,240,209,0.6);
+  transform: scale(1.05);
+}
+
+.task__button:focus,
+.task__button:hover{
+  border: none;
+  background-color: rgba(170,240,209,0.6);
+  box-shadow:0 0 15px 4px  rgba(170,240,209,0.6);
+  transform: scale(1.05);
+}
