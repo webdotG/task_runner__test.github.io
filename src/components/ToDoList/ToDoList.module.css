@@ -17,6 +17,18 @@
   justify-content: space-between;
 }
 
+.task-list__item:focus,
+.task-list__item:hover{
+  padding-right:15px;
+  padding-left:15px;
+  background-color: rgba(0,0,0,0.06);
+  border-radius:10px;
+}
+
+.task-list__title{
+  font-size:24px;
+}
+
 .task-list__button--save,
 .task-list__button--delete,
 .task-list__button--edit,

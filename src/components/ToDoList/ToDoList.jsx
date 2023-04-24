@@ -73,7 +73,7 @@ import { IconNameHiOutlineLockOpen, HiOutlineLockClosed, HiOutlineLockOpen } fro
   return (
     <ul className={style['task-list']}>
     {
-      //при помощи MAP вывожу каждый обьект из массива todo в div
+      //при помощи MAP вывожу каждый обьект из массива todo в li
       //передаю уникальное значенеие key равное id обьекта 
       //добавляю проверку если edit то выводить input и button сохранить
       //input value при редактировании добавляю текущее значение и добавляю нынешнее значение title
@@ -92,11 +92,11 @@ import { IconNameHiOutlineLockOpen, HiOutlineLockClosed, HiOutlineLockOpen } fro
             {
               edit === item.id 
                 ?
-                <div>
+                <div className={style['edit_task__wrapper']}>
                   <textarea className={style['edit_task__textarea']} value={value} onChange={(e) => setValue(e.target.value)} />
                 </div>
                 :
-                <p className={style['task-list__paragraph']}>{item.title}</p>
+                <p className={style['task-list__title']}>{item.title}</p>
             }
             {
               edit === item.id 
