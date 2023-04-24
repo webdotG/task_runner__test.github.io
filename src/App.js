@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Header from './components/Header/Header';
 import AddToDo from './components/AddToDo/AddToDo';
 import ToDoList from './components/ToDoList/ToDoList';
-
+import style from '../src/App.css';
 
 function App() {
 //useState хранит в себе всю информацию, аналог базы данных

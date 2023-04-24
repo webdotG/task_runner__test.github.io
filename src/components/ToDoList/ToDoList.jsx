@@ -1,4 +1,8 @@
 import React, {useState} from "react";
+import style from './ToDoList.module.css'
+import { MdOutlineDelete } from "react-icons/md";
+
+
 
 //получаю todo и settodo переданные из app.js 
   function ToDoList ({todo, setTodo}) {
@@ -66,7 +70,7 @@ import React, {useState} from "react";
   }
 
   return (
-    <div>
+    <ul className={style['task-list']}>
     {
       //при помощи MAP вывожу каждый обьект из массива todo в div
       //передаю уникальное значенеие key равное id обьекта 
@@ -83,33 +87,33 @@ import React, {useState} from "react";
       //добавляю кнопку схоже с удалением задачи но передаю функцию закрытия/открытия задачи
       
       todo.map( item => (
-        <div key={item.id}>
-          {  
-            edit === item.id 
-              ?
-              <div>
-                <input value={value} onChange={(e) => setValue(e.target.value)} />
-              </div>
-              :
-              <div>{item.title}</div>
-          }
-          {
-            edit === item.id 
-              ?
-              <div>
-                <button onClick={() => saveTodo(item.id)} >сохранить</button>
-              </div>
-              :
-              <div>
-                <button onClick={ () =>deleteTodo(item.id)}>Удалить задачу</button>
-                <button onClick={ () =>editTodo(item.id, item.title)}>Редактировать задачу</button>
-                <button onClick={ () =>statusTodo(item.id)}>открыть/закрыть задачу</button>      
-              </div>
-          }  
-        </div>
+        <li className={style['task-list__item']}  key={item.id}>
+            {
+              edit === item.id 
+                ?
+                <div>
+                  <textarea className={style['edit_task__textarea']} value={value} onChange={(e) => setValue(e.target.value)} />
+                </div>
+                :
+                <p className={style['task-list__paragraph']}>{item.title}</p>
+            }
+            {
+              edit === item.id 
+                ?
+                <div className={style['task-list__button-wrapper']}>
+                  <button onClick={() => saveTodo(item.id)} >сохранить</button>
+                </div>
+                :
+                <div className={style['task-list__button-wrapper']}>
+                  <button className={style['task-list__button--delete']} onClick={ () =>deleteTodo(item.id)}><MdOutlineDelete className={style.delete__icon} width={1.3} height={1.3}/></button>
+                  <button className={style['task-list__button--edit']} onClick={ () =>editTodo(item.id, item.title)}>edit</button>
+                  <button className={style['task-list__button--status']} onClick={ () =>statusTodo(item.id)}>stat</button>      
+                </div>
+            }
+        </li>    
       ))
     }
-    </div>
+    </ul>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { v1 as uuidv1 } from 'uuid';
+import style from './AddToDo.module.css'
 
 function AddToDo ({todo, setTodo}) {      
 
@@ -28,9 +29,9 @@ function AddToDo ({todo, setTodo}) {
 //добавляю обработчик который при изменении value в поле ввода будет вызывать функцию setvalue и передаю в нее значение которое получаю из этого поля 
 //кнопка при нажатии которой вызывается функция сохранения стэйта  
   return (
-    <div>
-      <input placeholder="новая задача" value={value} onChange={ (e) => setValue(e.target.value) }/>
-      <button onClick={saveTodo}>опубликовать</button>
+    <div className={style.task}>
+      <input className={style.task__input} placeholder="новая задача" value={value} onChange={ (e) => setValue(e.target.value) }/>
+      <button className={style.task__button} onClick={saveTodo}>создать задачу</button>
     </div>
   );
 }
