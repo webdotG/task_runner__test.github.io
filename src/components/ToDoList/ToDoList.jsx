@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import style from './ToDoList.module.css'
 import { MdOutlineDelete } from "react-icons/md";
 import { BiEditAlt } from "react-icons/bi";
@@ -20,6 +20,10 @@ function ToDoList ({todo, setTodo}) {
   //переменная которую фильтруем по дефолту в ней лежат все todo функция которая будет фильтровать
   //массив по умолчанию имеет значение todo-список всех задач
   const[filtered, setFiltered] = useState(todo)
+
+//добавляю хук useeffect для перерисовки страницы
+  //только при добавлении новой задачи
+useEffect( () => {setFiltered(todo)}, [todo])
 
 //функция для фильтрации задач по статусу
   //если статус равен all то в setFiltered будет значение todo-список всех задач
