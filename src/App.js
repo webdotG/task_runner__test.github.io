@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from './components/Header/Header';
 import AddToDo from './components/AddToDo/AddToDo';
 import ToDoList from './components/ToDoList/ToDoList';
@@ -8,26 +8,13 @@ function App() {
 //useState хранит в себе всю информацию, аналог базы данных
   //вся информация массива с обьектами доступна в переменной TODO
   //SETTODO функция которая будет менять работать с TODO с массивом обьектов
-  const [todo, setTodo] = useState([
-    {
-      id: 1,
-      title: 'first task',
-      status: true,
-
-    },
-    {
-      id: 2,
-      title: 'second task',
-      status: true,
-
-    },
-    {
-      id: 3,
-      title: 'third task',
-      status: true,
-
-    },
-    ]);
+  const [todo, setTodo] = useState(
+    JSON.parse(localStorage.getItem('todo')) || []
+  );
+  useEffect( () => {
+    localStorage.setItem('todo' , JSON.stringify(todo))
+  } 
+  ,[todo])
   
 //todo.forEach((i) => console.log(i.id))
   
