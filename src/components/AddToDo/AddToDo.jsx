@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import { v1 as uuidv1 } from 'uuid';
 import style from './AddToDo.module.css'
 
+//test comment
+
 function AddToDo ({todo, setTodo}) {      
 
 //использую хук usestate для хранения текста из value input//при изменения значания value оно передайтся в setvalue оно сохраняется в value 
