@@ -3,7 +3,7 @@ import style from './ToDoList.module.css'
 import { MdOutlineDelete } from "react-icons/md";
 import { BiEditAlt } from "react-icons/bi";
 import { FaRegSave } from "react-icons/fa";
-import { IconNameHiOutlineLockOpen, HiOutlineLockClosed, HiOutlineLockOpen } from "react-icons/hi2";
+import { HiOutlineLockClosed, HiOutlineLockOpen } from "react-icons/hi2";
 
 //получаю todo и settodo переданные из app.js 
   function ToDoList ({todo, setTodo}) {
@@ -71,7 +71,15 @@ import { IconNameHiOutlineLockOpen, HiOutlineLockClosed, HiOutlineLockOpen } fro
   }
 
   return (
+    
     <ul className={style['task-list']}>
+
+      <nav>
+        <button>все задачи</button>
+        <button>открытые задачи</button>
+        <button>закрытые задачи</button>
+      </nav>
+
     {
       //при помощи MAP вывожу каждый обьект из массива todo в li
       //передаю уникальное значенеие key равное id обьекта 
@@ -96,7 +104,11 @@ import { IconNameHiOutlineLockOpen, HiOutlineLockClosed, HiOutlineLockOpen } fro
                   <textarea className={style['edit_task__textarea']} value={value} onChange={(e) => setValue(e.target.value)} />
                 </div>
                 :
-                <p className={style['task-list__title']}>{item.title}</p>
+                <p className={
+                  ! item.status
+                  ? style['task-status--close']
+                  : ''
+                }>{item.title}</p>
             }
             {
               edit === item.id 

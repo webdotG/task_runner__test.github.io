@@ -27,6 +27,12 @@
 
 .task-list__title{
   font-size:24px;
+  font-weight: 400;
+}
+
+.task-status--close{
+  color: rgba(0,0,0,0.6);
+  text-decoration: line-through;
 }
 
 .task-list__button--save,

@@ -24,7 +24,7 @@ function App() {
     {
       id: 3,
       title: 'third task',
-      status: false,
+      status: true,
 
     },
     ]);
