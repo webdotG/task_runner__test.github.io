@@ -6,6 +6,13 @@
   align-items: center;
   justify-content: space-between;
 }
+.status-filter{
+  min-width: 680px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .task-list__item{
   min-height: 70px;

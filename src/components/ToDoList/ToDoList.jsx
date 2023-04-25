@@ -6,7 +6,7 @@ import { FaRegSave } from "react-icons/fa";
 import { HiOutlineLockClosed, HiOutlineLockOpen } from "react-icons/hi2";
 
 //получаю todo и settodo переданные из app.js 
-  function ToDoList ({todo, setTodo}) {
+function ToDoList ({todo, setTodo}) {
 
 //флаг для обозначения в каком состоянии мы сейчас находимся просмтора или редактирования задачи
   //false - просмотр задачи true - редактирование задачи
@@ -15,6 +15,24 @@ import { HiOutlineLockClosed, HiOutlineLockOpen } from "react-icons/hi2";
 
 //для установки значения в input value нынешего значения закидываю в него нынешний title
   const[value,setValue] = useState('')
+
+//для работы с фильтрами задач
+  //переменная которую фильтруем по дефолту в ней лежат все todo функция которая будет фильтровать
+  //массив по умолчанию имеет значение todo-список всех задач
+  const[filtered, setFiltered] = useState(todo)
+
+//функция для фильтрации задач по статусу
+  //если статус равен all то в setFiltered будет значение todo-список всех задач
+  //если статус равен true или false то создаю новый массив который принимае изначальный todo
+  //при помощи метода filter находить обьект в котором status равен status и все обьекты закидываю в newtodo
+  const todoFilter = (status) => {
+    if(status === 'all') {
+      setFiltered(todo)
+    } else { 
+        let newTodo = [...todo].filter( item => item.status === status)
+        setFiltered(newTodo)
+    }    
+  }
 
 //функция для удаления todo
     //создаю переменную в которую положу новый массив в котором не будет выбранного нами элемента
@@ -74,13 +92,14 @@ import { HiOutlineLockClosed, HiOutlineLockOpen } from "react-icons/hi2";
     
     <ul className={style['task-list']}>
 
-      <nav>
-        <button>все задачи</button>
-        <button>открытые задачи</button>
-        <button>закрытые задачи</button>
+      <nav className={style['status-filter']}>
+        <button onClick={() => todoFilter('all')}>все задачи</button>
+        <button onClick={() => todoFilter(true)}>открытые задачи</button>
+        <button onClick={() => todoFilter(false)}>закрытые задачи</button>
       </nav>
 
     {
+      //начинаю работу с уже отфильтрованными задачами по статусу
       //при помощи MAP вывожу каждый обьект из массива todo в li
       //передаю уникальное значенеие key равное id обьекта 
       //добавляю проверку если edit то выводить input и button сохранить
@@ -95,7 +114,7 @@ import { HiOutlineLockClosed, HiOutlineLockOpen } from "react-icons/hi2";
       //на кнопку вешаю обработчик который будет вызывать функцию удаления аргументом котрой будет id обьекта 
       //добавляю кнопку схоже с удалением задачи но передаю функцию закрытия/открытия задачи
       
-      todo.map( item => (
+      filtered.map( item => (
         <li className={style['task-list__item']}  key={item.id}>
             {
               edit === item.id 
