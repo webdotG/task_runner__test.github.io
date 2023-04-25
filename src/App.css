@@ -1,1 +1,15 @@
+.form-login{
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
+.form-login__name-wrapper,
+.form-login__password-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 23px;
+}

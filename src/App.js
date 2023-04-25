@@ -5,6 +5,7 @@ import ToDoList from './components/ToDoList/ToDoList';
 import style from '../src/App.css';
 import {useForm} from 'react-hook-form';
 
+
 function App() {
 
 //создаю обьект используя хук useform для валидацию формы
@@ -17,7 +18,25 @@ function App() {
       errors
     },
     handleSubmit,
-  } = useForm();
+    reset,                                  //метод для очистки формы после отправки
+  } = useForm({                             //в хук передаю обьект с настройками проверки
+      mode: 'onChange'                      //mode-режим выбрал при изменении данных
+  });                       
+
+//кастомный способ обработки формы
+  //дефолтный handlesubmit будет передавать данные полей формы в мою data
+  //если в handlesubmit есть какие-то ошибки то кастомный onsubmit вызываться не будет
+  //onsubmit будет срабатывать тольео если нет ошибок
+  //для проверки создаю алерт что бы сотреть что вообще передаётся
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+    reset();                                //очищаю форму после отправки
+  }
+
+
+
+
+
 
 //useState хранит в себе всю информацию, аналог базы данных
   //вся информация массива с обьектами доступна в переменной TODO
@@ -35,6 +54,43 @@ function App() {
   
   return (
     <div className={style['App']}>
+
+
+//сначла буду вызывать метод handlesubmit который идкт из коробки хука useform 
+  //уже в нём буду использовать свой кастомный хэндлер onsubmit рписаный выше  
+  <form onSubmit={handleSubmit(onSubmit)} className={['form-login']}>
+    <div className={['form-login__name-wrapper']}> 
+      <input                                             //'firstname'=name'firstname' уникальный ключ
+        {...register('firstname', {                      //метод импортированный из коробки хука useform-вохвращает обьект и для работы использую деструктуризацию
+          required: 'поле обязательно к заполнению',     //задаю правила для input вывожу сообщение если requirde не заполнен
+          minLength: {
+            value: 5,                                    //задаю минимальное еоличество символов 5
+            message: 'миниимальное количество символов 5'//передаю сообщение об ошибке 
+          }
+        })}        
+      />
+      <div style={{height: 40}}>
+        {errors?.firstname && <p>{}errors?.firstname?.message || 'ошибка firstname'</p>}
+      </div>
+    </div>
+    <input                                             
+      {...register('lasttname', {                      
+        required: 'поле обязательно к заполнению',     
+        minLength: {
+          value: 5,                                    
+          message: 'миниимальное количество символов 5' 
+        }
+      })}        
+    />
+    <div style={{height: 40}}>
+      {errors?.lastname && <p>{}errors?.lastname?.message || 'ошибка lastname'</p>}
+    </div>
+    
+    <input type='submit'/>
+  </form>
+
+
+
 
       <Header/>
       <AddToDo todo={todo} setTodo={setTodo}/>
