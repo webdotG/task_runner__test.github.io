@@ -8,6 +8,7 @@ function App() {
 //useState хранит в себе всю информацию, аналог базы данных
   //вся информация массива с обьектами доступна в переменной TODO
   //SETTODO функция которая будет менять работать с TODO с массивом обьектов
+  //добавляю localStorage
   const [todo, setTodo] = useState(
     JSON.parse(localStorage.getItem('todo')) || []
   );
@@ -20,6 +21,7 @@ function App() {
   
   return (
     <div className={style['App']}>
+    
       <Header/>
       <AddToDo todo={todo} setTodo={setTodo}/>
       <ToDoList todo={todo} setTodo={setTodo} />
