@@ -3,8 +3,22 @@ import Header from './components/Header/Header';
 import AddToDo from './components/AddToDo/AddToDo';
 import ToDoList from './components/ToDoList/ToDoList';
 import style from '../src/App.css';
+import {useForm} from 'react-hook-form';
 
 function App() {
+
+//создаю обьект используя хук useform для валидацию формы
+  //метод register для регистрации полей формы
+  //formstate обьект со свойствами я использую свойство errors для вывода ошибок
+  //handleSubmit функция которая будет вызываться при нажатии на кнопку submit
+  const {
+    register,
+    formState: {
+      errors
+    },
+    handleSubmit,
+  } = useForm();
+
 //useState хранит в себе всю информацию, аналог базы данных
   //вся информация массива с обьектами доступна в переменной TODO
   //SETTODO функция которая будет менять работать с TODO с массивом обьектов
@@ -21,7 +35,7 @@ function App() {
   
   return (
     <div className={style['App']}>
-    
+
       <Header/>
       <AddToDo todo={todo} setTodo={setTodo}/>
       <ToDoList todo={todo} setTodo={setTodo} />
