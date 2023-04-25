@@ -35,7 +35,7 @@ const onSubmit = (data) => {
   <form onSubmit={handleSubmit(onSubmit)} className={style['form-login']}>
       <div className={style['form-login__name-wrapper']}>
         <label class={style['form-login__name-label']}>log in</label>
-        <input                                             //'firstname'=name'firstname' уникальный ключ
+        <input className={style['form-login__name-input']}                                             //'firstname'=name'firstname' уникальный ключ
           {...register('firstname', {                      //метод импортированный из коробки хука useform-вохвращает обьект и для работы использую деструктуризацию
             required: 'обязательно заполнить',             //задаю правила для input вывожу сообщение если requirde не заполнен
             minLength: {
@@ -44,11 +44,24 @@ const onSubmit = (data) => {
             }
           })}
         />
-        <div style={{ height: 40 }}>
+        <div style={{ height: 20 }}>
           {errors?.firstname && <p>{errors?.firstname?.message || 'ошибка firstname'}</p>}
         </div>
       </div>
-      <input type='submit' disabled={!isValid} />
+      <div className={style['form-login__password-wrapper']}>
+          <label className={style['form-login__password-label']} for="form-login-password">password</label>
+          <input className={style['form-login__password-input']} id="form-login-password" name="form-login-password" type="password" placeholder="password"></input>
+      </div>
+      <div className={style['form-login__remember-wrapper']}>
+          <label className={style['form-login__remember-label']} for="form-login-remember">remeber me</label>
+          <input className={style['form-login__remember-input']} id="form-login-remember" type="checkbox"></input>
+      </div>
+      <div className={style['form-login__forgot-password__wrapper']}>
+          <a className={style['form-login__forgot-password']}>forgot password ?</a>
+      </div>
+      <div className={style['form-login__submit-btn__wrapper']}>
+          <button className={style['form-login__submit-btn']} type="submit" disabled={!isValid}>enter</button>
+      </div>
     </form>
   )
 }

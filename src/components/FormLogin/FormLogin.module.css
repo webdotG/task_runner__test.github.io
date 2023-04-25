@@ -1,9 +1,20 @@
+.form-login {
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.form-login__title{
+    margin: 0;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
 .form-login{
-  min-height: 270px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+    min-height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .form-login__name-wrapper,
@@ -25,3 +36,34 @@
     padding-left: 5px;
     padding-bottom: 10px;
 }
+
+.form-login__remember-wrapper{
+    margin-top: -5px;
+    margin-left: -4px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.form-login__remember-label{
+    padding-left: 15px;
+}
+
+.form-login__forgot-password__wrapper{
+    padding-bottom: 15px;
+}
+
+.form-login__submit-btn__wrapper{
+    padding-bottom: 15px;
+}
+
+.form-login__submit-btn{
+    width: 150px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 12px;
+    border: 2px solid black;
+    background-color: transparent;
+}
+
