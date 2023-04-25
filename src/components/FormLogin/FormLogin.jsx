@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import style from './FormLogin.module.css';
 
 //сначла буду вызывать метод handlesubmit который идкт из коробки хука useform 
 //уже в нём буду использовать свой кастомный хэндлер onsubmit рписаный выше  
@@ -31,9 +32,9 @@ const onSubmit = (data) => {
 }
 
   return (
-  <form onSubmit={handleSubmit(onSubmit)} className={['form-login']}>
-      <div className={['form-login__name-wrapper']}>
-        <label class={['form-login__name-label']}>log in</label>
+  <form onSubmit={handleSubmit(onSubmit)} className={style['form-login']}>
+      <div className={style['form-login__name-wrapper']}>
+        <label class={style['form-login__name-label']}>log in</label>
         <input                                             //'firstname'=name'firstname' уникальный ключ
           {...register('firstname', {                      //метод импортированный из коробки хука useform-вохвращает обьект и для работы использую деструктуризацию
             required: 'обязательно заполнить',             //задаю правила для input вывожу сообщение если requirde не заполнен
