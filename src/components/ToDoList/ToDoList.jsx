@@ -93,9 +93,9 @@ function ToDoList ({todo, setTodo}) {
     <ul className={style['task-list']}>
 
       <nav className={style['status-filter']}>
-        <button onClick={() => todoFilter('all')}>все задачи</button>
-        <button onClick={() => todoFilter(true)}>открытые задачи</button>
-        <button onClick={() => todoFilter(false)}>закрытые задачи</button>
+        <button className={style['status-filter__button']} onClick={() => todoFilter('all')}>все задачи</button>
+        <button className={style['status-filter__button']} onClick={() => todoFilter(true)}>открытые задачи</button>
+        <button className={style['status-filter__button']} onClick={() => todoFilter(false)}>закрытые задачи</button>
       </nav>
 
     {
