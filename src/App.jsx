@@ -22,22 +22,22 @@ function App() {
 
 	return (
 		<div className={style["App"]}>
-			<a href="/">formLogin</a>
-			<a href="/add">addTodo</a>
-			<a href="/list">addTodoList</a>
-			<Routes>
-				<Route path="/" element={<FormLogin/>} />
-				<Route path="/add" element={<AddToDo/>} />
-				<Route path="/list" element={<ToDoList/>} />
-			</Routes>
+			<FormLogin />
+			<Header />
+			<AddToDo todo={todo} setTodo={setTodo} />
+			<ToDoList todo={todo} setTodo={setTodo} />
 		</div>
 	);
 }
 
-// <FormLogin />
-// <Header />
-// <AddToDo todo={todo} setTodo={setTodo} />
-// <ToDoList todo={todo} setTodo={setTodo} />
+// <a href="/">formLogin</a>
+// <a href="/add">addTodo</a>
+// <a href="/list">addTodoList</a>
+// <Routes>
+//   <Route path="/" element={<FormLogin/>} />
+//   <Route path="/add" element={<AddToDo/>} />
+//   <Route path="/list" element={<ToDoList/>} />
+// </Routes>
 
 //передаю компоненту todolist PROPS пропсы для того что бы можно было работать с этим компонентом
 //говорю что todo равно массиву обьектов todo и settodo равно фуекцик settodo
