@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import style from './FormLogin.module.css';
-import { type } from '@testing-library/user-event/dist/type';
+import CheckBox from '../CheckBox/CheckBox';
 
 //сначла буду вызывать метод handlesubmit который идкт из коробки хука useform 
 //уже в нём буду использовать свой кастомный хэндлер onsubmit рписаный выше  
@@ -65,7 +65,7 @@ function FormLogin() {
       </div>
       <div className={style['form-login__remember-wrapper']}>
         <div className={style['form-login__remember-input-label__wrapper']}>
-          <input className={style['form-login__remember-input']} id="form-login-remember" type="checkbox"></input>
+          <CheckBox/>
           <label className={style['form-login__remember-label']} for="form-login-remember">запомнить</label>
         </div>
         <a className={style['form-login__forgot-password-link']}>забыли пароль ?</a>

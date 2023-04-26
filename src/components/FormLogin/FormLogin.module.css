@@ -57,7 +57,24 @@
 }
 
 .form-login__remember-label{
-    padding-left: 5px;
+    padding-left: 25px;
+}
+
+.form-login__remember-input{
+    position:absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-login__remember-input--checkbox{
+    margin-left: -25px;
+    position:absolute;
+    
+}
+
+.form-login__remember-input--checkbox--icon{
+    scale: 1.5;
 }
 
 .form-login__forgot-password__wrapper{
@@ -92,3 +109,4 @@
 .form-login__submit-btn:disabled{
     color: rgba(0,0,0,0.3)
 }
+
