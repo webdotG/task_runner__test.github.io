@@ -1,0 +1,24 @@
+.form-login__remember-wrapper{
+  min-width:250px;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-login__remember-input{
+  position:absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.form-login__remember-input--checkbox{
+  margin-left: -25px;
+  position:absolute;
+  
+}
+
+.form-login__remember--checkbox--icon{
+  scale: 1.5;
+}
