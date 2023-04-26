@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, } from "react-router-dom";
 import style from "../src/App.css";
+import { Layout } from './components/Layout/Layout'
 
 //импортирую страницы
 import FormLogin from "./components/FormLogin/FormLogin";
@@ -22,13 +23,12 @@ function App() {
 
 	return (
 		<div className={style["App"]}>
-			<Link to="/">formLogin</Link>
-			<Link to="/add">addTodo</Link>
-			<Link to="/list">addTodoList</Link>
 			<Routes>
-				<Route path="/" element={<FormLogin />} />
-				<Route path="/add" element={<AddToDo todo={todo} setTodo={setTodo} />}/>
-				<Route path="/list" element={<ToDoList todo={todo} setTodo={setTodo} />}/>
+				 <Route path="/" element={ <Layout/> }>  {/*создаю route в который кладу дочерние элементы */}
+					<Route index element={<FormLogin />} />{/*использую ключ index что бы показать главную страницу */}
+					<Route path="add" element={<AddToDo todo={todo} setTodo={setTodo} />}/>{/**/}
+					<Route path="list" element={<ToDoList todo={todo} setTodo={setTodo} />}/>
+				</Route>
 			</Routes>
 		</div>
 	);
