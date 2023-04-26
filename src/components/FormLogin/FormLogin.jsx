@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import style from './FormLogin.module.css';
 import CheckBox from '../RemeberForgotCheck/RemeberForgotCheck';
 
@@ -35,7 +35,7 @@ function FormLogin() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={style['form-login']} autoComplete='off'>
       <div className={style['form-login__name-wrapper']}>
-        <label class={style['form-login__name-label']}>log in</label>
+        <label className={style['form-login__name-label']}>log in</label>
         <input className={style['form-login__name-input']}                                             //'firstname'=name'firstname' уникальный ключ
           {...register('user', {                      //метод импортированный из коробки хука useform-вохвращает обьект и для работы использую деструктуризацию
             required: 'обязательно заполнить',             //задаю правила для input вывожу сообщение если requirde не заполнен
@@ -49,7 +49,7 @@ function FormLogin() {
         </div>
       </div>
       <div className={style['form-login__password-wrapper']}>
-        <label className={style['form-login__password-label']} for="form-login-password">password</label>
+        <label className={style['form-login__password-label']} >password</label>
         <input className={style['form-login__password-input']} type='password' 
           {...register('password', {                      //метод импортированный из коробки хука useform-вохвращает обьект и для работы использую деструктуризацию
             required: 'обязательно заполнить',             //задаю правила для input вывожу сообщение если requirde не заполнен

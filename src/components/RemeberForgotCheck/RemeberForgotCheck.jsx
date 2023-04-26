@@ -15,8 +15,8 @@ function CheckBox() {
   return (
     <div className={style['form-login__remember-wrapper']}>
       <input className={style['form-login__remember-input']} type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
-      <span className={['form-login__remember--checkbox--icon']}>{icon}</span>
-      <label className={style['form-login__remember-label']} for="form-login-remember">запомнить</label>
+      <span className={style['form-login__remember--checkbox--icon']}>{icon}</span>
+      <label className={style['form-login__remember-label']}>запомнить</label>
       <a className={style['form-login__forgot-password-link']}>забыли пароль ?</a>
     </div>
   )
