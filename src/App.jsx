@@ -3,7 +3,6 @@ import { Routes, Route, Link } from "react-router-dom";
 import style from "../src/App.css";
 
 //импортирую страницы
-import Header from "./components/Header/Header";
 import FormLogin from "./components/FormLogin/FormLogin";
 import AddToDo from "./components/AddToDo/AddToDo";
 import ToDoList from "./components/ToDoList/ToDoList";
@@ -16,25 +15,20 @@ function App() {
 	const [todo, setTodo] = useState(
 		JSON.parse(localStorage.getItem("todo")) || []
 	);
+
 	useEffect(() => {
 		localStorage.setItem("todo", JSON.stringify(todo));
 	}, [todo]);
 
 	return (
 		<div className={style["App"]}>
-			<a href="/">formLogin</a>
-			<a href="/add">addTodo</a>
-			<a href="/list">addTodoList</a>
+			<Link to="/">formLogin</Link>
+			<Link to="/add">addTodo</Link>
+			<Link to="/list">addTodoList</Link>
 			<Routes>
 				<Route path="/" element={<FormLogin />} />
-				<Route
-					path="/add"
-					element={<AddToDo todo={todo} setTodo={setTodo} />}
-				/>
-				<Route
-					path="/list"
-					element={<ToDoList todo={todo} setTodo={setTodo} />}
-				/>
+				<Route path="/add" element={<AddToDo todo={todo} setTodo={setTodo} />}/>
+				<Route path="/list" element={<ToDoList todo={todo} setTodo={setTodo} />}/>
 			</Routes>
 		</div>
 	);
