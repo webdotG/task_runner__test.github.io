@@ -15,6 +15,10 @@ li{
   padding: 0;
 }
 
+p{
+  margin: 0;
+}
+
 button{
   border: none;
   background-color: transparent;
