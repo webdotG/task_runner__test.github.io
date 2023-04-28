@@ -68,7 +68,7 @@
 
 .task-list__item .task-status--close{
   color: rgba(0,0,0,0.3);
-  background-color: tomato;
+  background-color: rgba(255, 99, 71,0.7);
 }
 
 .task-list__button--save,
