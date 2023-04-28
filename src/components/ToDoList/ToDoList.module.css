@@ -50,14 +50,25 @@
   border-radius:10px;
 }
 
+.task-list__item p{
+  min-width: 350px;
+  min-height:50px;
+  padding-left:10px;
+  display: flex;
+  align-items: center;
+  font-size:18px;
+  background-color:  #aaf0d1;;
+  border-radius: 10px;
+}
+
 .task-list__title{
   font-size:24px;
   font-weight: 400;
 }
 
-.task-status--close{
-  color: rgba(0,0,0,0.6);
-  text-decoration: line-through;
+.task-list__item .task-status--close{
+  color: rgba(0,0,0,0.3);
+  background-color: tomato;
 }
 
 .task-list__button--save,
