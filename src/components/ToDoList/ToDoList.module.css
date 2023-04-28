@@ -56,10 +56,13 @@
   padding-left:10px;
   display: flex;
   align-items: center;
-  font-size:18px;
+  font-size:22px;
   background-color:  #aaf0d1;;
   border-radius: 10px;
+  position:relative;
 }
+
+
 
 .task-list__title{
   font-size:24px;
@@ -67,8 +70,9 @@
 }
 
 .task-list__item .task-status--close{
-  color: rgba(0,0,0,0.3);
+  color: rgba(0,0,0,0.4);
   background-color: rgba(255, 99, 71,0.7);
+  font-size: 18px;
 }
 
 .task-list__button--save,
