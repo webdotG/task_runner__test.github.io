@@ -24,7 +24,7 @@ function AddToDo ({todo, setTodo}) {
       }]
       );
       setValue(''); //после всех манипуляций обнуляю value input на пустую строку
-  } else { alert('нельзя добавить пустую задачу'); }
+  } else { alert('дело должно быть написано'); }
 }
 
 //инпут для поля ввода задачи c value для значения-ввода задачи 
@@ -34,8 +34,8 @@ function AddToDo ({todo, setTodo}) {
 //кнопка при нажатии которой вызывается функция сохранения стэйта  
   return (
     <div className={style.task}>
-      <input className={style.task__input} placeholder="новая задача" value={value} onChange={ (e) => setValue(e.target.value) }/>
-      <button className={style.task__button} onClick={saveTodo}>создать задачу</button>
+      <input className={style.task__input} placeholder="новое дело" value={value} onChange={ (e) => setValue(e.target.value) }/>
+      <button className={style.task__button} onClick={saveTodo}>добавить в список дел</button>
     </div>
   );
 }
