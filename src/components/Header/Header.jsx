@@ -4,7 +4,7 @@ import style from './Header.module.css'
 function Header () {
   return (
     <div className={style['header']} >
-      Task List
+      Дела
     </div>
   )
 }

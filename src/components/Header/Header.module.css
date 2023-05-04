@@ -7,8 +7,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 26px;
+  font-size: 28px;
+  letter-spacing: 1.2px;
   color: black;
-  background-color: #aaf0d1;
-  border-radius: 10px;
+  background-color: #1136;
+  color: white;
+  border-radius: 15px;
 }

@@ -13,12 +13,12 @@
   padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  border: 2px solid  rgba(0,0,0,0.06);
   border-radius: 10px;
-  box-shadow:0 0 15px 4px rgba(170,240,209,0.6);
+  box-shadow:0 0 2px 2px #1136;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   transition: transform 250ms ease;
+  border: none;
 } 
 
 .task__button{
@@ -26,12 +26,12 @@
   padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  border: 2px solid rgba(0,0,0,0.06);
   border-radius: 10px;
-  box-shadow:0 0 15px 4px rgba(170,240,209,0.6);
+  box-shadow:0 0 2px 2px #1136;
   cursor: pointer;
+  color:grey;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 0.3px;
   line-height: 20px;
   transition: transform 250ms ease;
@@ -40,14 +40,13 @@
 .task__input:focus,
 .task__input:hover,
 .task__input:active{
-  box-shadow:0 0 15px 4px  rgba(170,240,209,0.6);
+  box-shadow:0 0 2px 2px #1136;
   transform: scale(1.05);
 }
 
 .task__button:focus,
 .task__button:hover{
   border: none;
-  background-color: rgba(170,240,209,0.6);
-  box-shadow:0 0 15px 4px  rgba(170,240,209,0.6);
+  box-shadow:0 0 2px 2px #1136;
   transform: scale(1.05);
 }
