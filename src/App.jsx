@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import style from "../src/App.css";
-// import { Layout } from './components/Layout/Layout'
 // import { Routes, Route, } from "react-router-dom";
 
 //импортирую страницы
-import FormLogin from "./components/FormLogin/FormLogin";
 import Header from './components/Header/Header'
 import AddToDo from "./components/AddToDo/AddToDo";
 import ToDoList from "./components/ToDoList/ToDoList";
@@ -24,11 +22,9 @@ function App() {
 
 	return (
 		<div className={style["App"]}>
-			<FormLogin />
 			<Header />
 			<AddToDo todo={todo} setTodo={setTodo} />
 			<ToDoList todo={todo} setTodo={setTodo} />
-
 		</div>
 	);
 }
